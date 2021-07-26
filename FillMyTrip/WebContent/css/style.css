@@ -1,0 +1,2261 @@
+/* --------------
+
+Template name: Go Travel
+Author: del-code
+Version: 1.0
+
+-------------- */
+
+/*------------------------------------------------------------------
+[Table of contents]
+1. Font import
+2. Normalize
+3. Header
+   3.1 header icon / #travel-icon
+   3.2 header section / #delcd-header-section.stuck
+   3.3 header gradient / .delcd-cover .delcd-overlay
+   3.4 header description / .delcd-cover .desc
+4. Tabulation
+   4.1 tabulation / #form-tab-panel .active
+   4.2 tab label / .tabulation label
+5. Navbar
+   5.1 menu wrapper / #delcd-menu-wrap
+   5.2 navbar logo / #delcd-logo
+   5.3 primary sub-menu / #delcd-primary-menu .delcd-sub-menu
+   5.4 sub-menu / .delcd-sub-menu a
+   5.5 Superfish Override Menu / .sf-menu
+6. Burger Menu
+   6.1 offcanvas menu / #offcanvas-menu
+   6.2 off-canvas toggle / .delcd-nav-toggle
+7. Subheading
+   7.1 heading section / .heading-section
+   7.2 heading text / .heading-section h3
+8. Card Display
+   8.1 hot tours / .delcd-tours
+   8.2 tour description / .desc h3
+   8.3 tour price / .delcd-tours .price
+   8.4 card display hover / .delcd-tours > div:hover
+9. Travel Plans
+   9.1 text masking / .blend-container
+   9.2 travel plans icon / .feature-left
+   9.3 travel plans description / .feature-left h3
+10. Popular Destination
+   10.1 destination list / .destination-list
+   10.2 destination list hover / .destination-list a:hover::after
+   10.3 destination grid / .dest-grid
+   10.4 destination grid title / .title-bg
+11. Tour Detail
+   11.1 tour price / .tour-price h3
+   11.2 tour cart / #tour-cart-btn
+   11.3 slider button image / .slider-button ul
+   11.4 tour review / #reviews i
+12. Car Rent
+   12.1 car box display / .car
+   12.2 car price / .car-price-list
+13. Blog
+   13.1 blog container / #blog-full .container
+   13.2 blog left side / #blog-left-side .bottom-border
+   13.3 blog image / .img-full
+   13.4 blog heading / .blog-heading
+   13.5 blog post-date / .posting-date
+   13.6 blog post author / #author-detail h4
+   13.7 blog comment / #comment-count
+   13.8 blog comment form / #comment-form
+   13.9 next-prev button / #next-prev
+   13.10 blog right widget / #right-sidebar
+   13.11 blog post widget list / .title-container
+   13.12 widget tags / #tags
+   13.13 blog text / .delcd-blog .blog-text
+14. Recent Blog
+   14.1 blog first col / .feature-full-1col .btn:hover
+   14.2 blog second col / .feature-full-2col
+15. Flight
+   15.1 flight book / .flight-book
+   15.2 plane name / .flight-book .plane-name
+   15.3 flight description / .flight-book .desc
+16. Testimonial
+   16.1 testimonial / #delcd-testimonial
+   16.2 testimonial box / #delcd-testimonial .box-testimony
+   16.3 testimonial blockquote / #delcd-testimonial blockquote
+17. Contact
+   17.1 contact info / #delcd-contact .contact-info
+   17.2 contact link / .contact-info a
+   17.3 contact form / #delcd-contact .form-control
+18. Footer
+   18.1 footer / #footer
+   18.2 footer title / #footer-title h3
+   18.3 footer description / #footer p
+   18.4 footer link / #footer a
+   18.5 footer social icons / .delcd-social-icons > a
+19. Bootstrap Overwrite
+   19.1 button / .btn
+   19.2 primary button / .btn.btn-primary
+   19.3 default button / .btn.btn-default:hover
+   19.4 outline button / .btn.btn-outline
+   19.5 tab panel button / .tab-content .btn
+20. Div Padding
+   20.1 row padding / .row-bottom-padded-lg
+   20.2 bottom line / .border-bottom
+------------------------------------------------------------------*/
+
+   
+/* =======================================================
+* 	Font import
+* ======================================================= */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,300');
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/* =======================================================
+* 	Normalize
+* ======================================================= */
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background: #fff;
+  /*color: #848484;*/
+  color: #716e6e;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+body.delcd-offcanvas {
+  overflow: hidden;
+}
+
+a {
+  color: #F78536;
+  
+  -moz-transition: 0.5s, ease;
+  -webkit-transition: 0.5s, ease;
+  -o-transition: 0.5s, ease;
+  transition: 0.5s, ease;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #F78536;
+}
+
+p, ul, ol {
+  margin-bottom: 1.5em;
+  font-size: 16px;
+  /*color: #848484;*/
+  color: #716e6e;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #5a5a5a;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+
+figure {
+  margin-bottom: 2em;
+}
+
+::-webkit-selection {
+  color: #fcfcfc;
+  background: #F78536;
+}
+
+::-moz-selection {
+  color: #fcfcfc;
+  background: #F78536;
+}
+
+::selection {
+  color: #fcfcfc;
+  background: #F78536;
+}
+
+/* =======================================================
+* 	Header
+* ======================================================= */
+
+/*-- header icon --*/
+#travel-icon{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#delcd-header {
+  position: relative;
+  margin-bottom: 0;
+  z-index: 9999999;
+}
+
+/*-- header section --*/
+#delcd-header-section.stuck {
+  position: fixed;
+  top: 0;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.delcd-cover,
+.delcd-hero {
+  position: relative;
+  min-height: 900px;
+  height: 95vh;
+}
+
+/*-- header gradient --*/
+.delcd-cover .delcd-overlay,
+.delcd-hero .delcd-overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(255, 62, 28, 0.5);
+  background: -moz-linear-gradient(left, rgba(255, 62, 28, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 62, 28, 0.5)), color-stop(100%, rgba(255, 140, 0, 0.5)));
+  background: -webkit-linear-gradient(left, rgba(255, 62, 28, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
+  background: -o-linear-gradient(left, rgba(255, 62, 28, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 62, 28, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
+  background: linear-gradient(to right, rgba(255, 62, 28, 0.5) 0%, rgba(255, 140, 0, 0.5) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3e1c', endColorstr='#ff8c00', GradientType=1 );
+}
+
+.delcd-cover {
+  background-size: cover;
+  position: relative;
+}
+
+.delcd-cover .btn {
+  padding: 1em 2em;
+  opacity: .9;
+}
+
+.delcd-cover.delcd-cover_2 {
+  height: 600px;
+}
+
+/*-- header description --*/
+.delcd-cover .desc, 
+.delcd-cover .desc2
+{
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  color: #fff;
+}
+
+.delcd-cover .desc{
+  top: 62%;
+  transform: translateY(-62%);
+  -webkit-transform: translateY(-62%);
+  -moz-transform: translateY(-62%);
+  -o-transform: translateY(-62%);
+  -ms-transform: translateY(-62%);
+}
+
+.delcd-cover .desc2{
+  text-align: center;	
+  top: 55%;
+  transform: translateY(-55%);
+  -webkit-transform: translateY(-55%);
+  -moz-transform: translateY(-55%);
+  -o-transform: translateY(-55%);
+  -ms-transform: translateY(-55%);
+}
+
+.desc-txt{
+	width: 100%;
+	padding-top: 20%;
+	padding-left: 10%;
+}
+
+.desc h2, 
+.desc2 h2
+{
+  color: #fff;
+  font-size: 60px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.desc h3,
+.desc2 h3
+{
+  color: #fff;
+}
+
+/* =======================================================
+* 	Tabulation
+* ======================================================= */
+
+/*-- tabulation --*/
+#form-tab-panel .active{
+	background-color: #F78536;
+	color: #fff;
+	border-radius: 0;
+}
+
+.tab-content.tour-tabpane{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.tabulation {
+  width: 100%;
+  float: left;
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  -ms-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  -o-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+}
+
+/*-- tab label --*/
+.tabulation label {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
+.tabulation input[type="text"] {
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  color: #F78536;
+}
+
+.tabulation input[type="text"]::-webkit-input-placeholder {
+  color: #F78536;
+}
+
+.tabulation input[type="text"]::-moz-placeholder {
+  color: #F78536;
+}
+
+.tabulation input[type="text"]:-ms-input-placeholder {
+  color: #F78536;
+}
+
+.tabulation input[type="text"]:-moz-placeholder {
+  color: #F78536;
+}
+
+.tab-content {
+  padding: 30px;
+}
+
+.nav-tabs {
+  border: none;
+}
+
+#form-tab-panel a {
+  border: none;
+  font-weight: bold;
+  padding: 15px 20px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+.nav-tabs .active a {
+  border: none;
+  background: #F78536;
+  color: #fff;
+  font-weight: bold;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+.nav-tabs:hover a, 
+.nav-tabs:focus a {
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+/* =======================================================
+* 	Navbar
+* ======================================================= */
+
+/*-- menu wrapper --*/
+#delcd-menu-wrap {
+  position: relative;
+  z-index: 2;
+  display: block;
+  float: right;
+  margin-top: 15px;
+}
+
+/*-- navbar logo --*/
+#delcd-logo {
+  position: relative;
+  z-index: 2;
+  font-size: 28px;
+  margin-top: 35px;
+  font-weight: 700;
+  float: left;
+  padding-left: 40px;
+}
+
+/*-- primary sub-menu --*/
+#delcd-primary-menu .delcd-sub-menu {
+  padding: 10px 7px 10px;
+  background: #fff;
+  left: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+#delcd-primary-menu .delcd-sub-menu:before {
+  position: absolute;
+  top: -9px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  content: '';
+}
+
+#delcd-primary-menu .delcd-sub-menu:after {
+  position: absolute;
+  top: -8px;
+  left: 21px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+  border-bottom: 8px solid white;
+  border-left: 8px solid transparent;
+  content: '';
+}
+
+#delcd-primary-menu .delcd-sub-menu a{
+	color: #575757;
+}
+
+#delcd-primary-menu ul,
+#delcd-primary-menu li
+{
+	background: transparent;
+}
+
+#delcd-primary-menu a {
+  letter-spacing: 0;
+  line-height: 34px;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: none;
+  background: none;
+}
+
+#delcd-primary-menu a:hover, 
+#delcd-primary-menu .active > a 
+{
+  color: #F78536;
+}
+
+#delcd-header-section {
+  padding: 0;
+  position: relative;
+  left: 0;
+  width: 100%;
+  z-index: 1022;
+  background: #fff;
+}
+
+.nav-header {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+/*-- sub-menu --*/
+.delcd-sub-menu a
+{
+  text-transform: none;
+  padding: 0.2em 1em;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/*-- Superfish Override Menu --*/
+.sf-menu {
+  margin: 7px 0 0 0;
+}
+
+.sf-menu {
+  float: right;
+}
+
+.sf-menu ul {
+  box-shadow: none;
+  border: transparent;
+  min-width: 12em;
+  width: 12em;
+}
+
+.sf-menu a {
+  border-left: none;
+  text-decoration: none;
+  zoom: 1;
+  border-bottom: none;
+  font-weight: bold;
+}
+
+/* =======================================================
+* 	Burger Menu
+* ======================================================= */
+
+/*-- offcanvas menu --*/
+#offcanvas-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #222;
+  right: -240px;
+  width: 240px;
+  padding: 20px;
+  overflow-y: scroll;
+  display: none;
+}
+
+.delcd-offcanvas #offcanvas-menu{
+	-moz-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+#offcanvas-menu ul {
+  padding: 0;
+  margin: 0;
+}
+
+#offcanvas-menu li {
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style: none;
+}
+
+#offcanvas-menu a {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#offcanvas-menu a:hover {
+  color: #F78536;
+}
+
+#offcanvas-menu .delcd-sub-menu {
+  margin-top: 9px;
+  padding-left: 20px;
+}
+
+#offcanvas-menu .active > a {
+  color: #F78536;
+}
+
+#offcanvas-menu .delcd-sub-menu{
+	display: none;
+}
+
+#offcanvas-menu .delcd-sub-ddown {
+  display: block;
+  position: relative;
+}
+
+#offcanvas-menu .delcd-sub-ddown:after {
+  position: absolute;
+  right: 0px;
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e922";
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.2);
+  
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.delcd-sub-ddown.active:after {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+#offcanvas-menu .active + ul{
+	display: block;
+}
+
+.delcd-offcanvas {
+  overflow: hidden;
+}
+
+#delcd-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.delcd-offcanvas #delcd-wrapper{
+	height: 100vh;
+}
+
+#delcd-page {
+	position: relative;
+	width:100%;
+	height: 100%;
+	
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.delcd-offcanvas #delcd-page{
+	position: absolute;
+}
+
+.delcd-offcanvas #delcd-page {
+  -moz-transform: translateX(-240px);
+  -webkit-transform: translateX(-240px);
+  -ms-transform: translateX(-240px);
+  -o-transform: translateX(-240px);
+  transform: translateX(-240px);
+}
+
+.delcd-offcanvas #delcd-page:after{
+	content:'';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: -1px;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 10;
+}
+
+/*-- off-canvas toggle --*/
+.delcd-nav-toggle {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.delcd-nav-toggle.active i::before, 
+.delcd-nav-toggle.active i::after {
+  background: #000;
+}
+
+.delcd-nav-toggle:hover, 
+.delcd-nav-toggle:focus, 
+.delcd-nav-toggle:active {
+  outline: none;
+  border-bottom: none;
+}
+
+.delcd-nav-toggle i {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  color: #000;
+  background: #000;
+  z-index: -1;
+  
+  -moz-transition: all .2s ease-out;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.delcd-nav-toggle i::before, 
+.delcd-nav-toggle i::after {
+  content: '';
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.delcd-nav-toggle.dark i::before, 
+.delcd-nav-toggle.dark i::after {
+  background: #000;
+  
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.delcd-nav-toggle i::before {
+  top: -7px;
+}
+
+.delcd-nav-toggle i::after {
+  bottom: -7px;
+}
+
+.delcd-nav-toggle:hover i::before {
+  top: -10px;
+}
+
+.delcd-nav-toggle:hover i::after {
+  bottom: -10px;
+}
+
+.delcd-nav-toggle.active i {
+  background: transparent;
+}
+
+.delcd-nav-toggle.active i::before {
+  top: 0;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.delcd-nav-toggle.active i::after {
+  bottom: 0;
+  -webkit-transform: rotateZ(-45deg);
+  -moz-transform: rotateZ(-45deg);
+  -ms-transform: rotateZ(-45deg);
+  -o-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+.delcd-nav-toggle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9999;
+  display: block;
+  margin: 0 auto;
+  display: none;
+  cursor: pointer;
+}
+
+/* =======================================================
+* 	Subheading
+* ======================================================= */
+
+/*-- heading section --*/
+.heading-section {
+  padding-bottom: 1em;
+  margin-bottom: 5em;
+}
+
+.heading-section:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  width: 100px;
+  margin-left: -50px;
+  height: 2px;
+  background: #F78536;
+}
+
+/*-- heading text --*/
+.heading-section h3 {
+  font-size: 40px;
+  font-weight: 400;
+  position: relative;
+}
+
+.heading-section p {
+  font-size: 20px;
+}
+
+.heading-title {
+  font-size: 40px;
+}
+
+/* =======================================================
+* 	Card Display
+* ======================================================= */
+
+/*-- hot tours --*/
+.delcd-tours {
+  margin-bottom: 30px;
+}
+
+.delcd-tours > div {
+  display: block;
+  color: #000;
+  position: relative;
+  bottom: 0;
+  overflow: hidden;
+  
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.delcd-tours img {
+  position: relative;
+  
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.delcd-tours > div:after {
+  opacity: 1;
+  visibility: visible;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 8;
+  
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.delcd-tours .desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  z-index: 12;
+  
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/*-- tour description --*/
+.desc h3 {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  font-size: 30px;
+  font-weight: 400;
+  visibility: visible;
+  margin-bottom: 5px;
+  
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.spot-list h3{ padding-bottom: 20px; }
+
+.delcd-tours span {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 5px;
+}
+
+/*-- tour price --*/
+.delcd-tours .price {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.hot-img-container .btn.btn-primary {
+  opacity: 1;
+  border: 2px solid #fff;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 400;
+  background: transparent;
+}
+
+/*-- card display hover --*/
+.delcd-tours > div:hover {
+  -webkit-box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
+}
+
+.delcd-tours > div:hover:after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  -ms-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  -o-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.delcd-tours > div:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.img-fluid{
+	width: 100%;
+}
+
+/* =======================================================
+* 	Travel Plans
+* ======================================================= */
+
+/*-- text masking --*/
+.blend-container{
+	overflow: hidden;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background: url(http://via.placeholder.com/600x600/dedede/ffffff) no-repeat;
+}
+
+.blend-container h2{
+	font-size: 12em;
+	padding: 30% 0;	
+	font-family: 'Open Sans';
+	font-weight: bold;
+	color: #000000;
+	background-color: rgba(255,255,255,.45);
+	text-align: center;
+	mix-blend-mode: lighten;
+	margin: 0;
+}
+
+/*-- travel plans icon --*/
+.feature-left {
+  float: left;
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.feature-left .icon {
+  float: left;
+  text-align: center;
+  width: 15%;
+}
+
+.feature-left i {
+  font-size: 40px;
+  color: #F78536;
+}
+
+.feature-copy {
+  float: right;
+  width: 80%;
+}
+
+.feature-copy h3 {
+  font-size: 18px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.feature-copy p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+#delcd-features {
+  padding: 7em 0;
+}
+
+#delcd-features .feature-left {
+  margin-bottom: 40px;
+}
+
+#delcd-features i {
+  color: #d9d9d9;
+}
+
+#delcd-features .icon {
+  float: left;
+  text-align: center;
+  width: 15%;
+}
+
+#delcd-features .feature-copy {
+  float: right;
+  width: 80%;
+}
+
+/*-- travel plans description --*/
+.feature-left h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.feature-left p {
+  font-size: 15px;
+}
+
+.feature-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* =======================================================
+* 	Popular Destination
+* ======================================================= */
+
+/*-- destination list --*/
+.destination-list{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;	
+	text-align: center;
+}
+
+.destination-list:after{
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 8;
+	
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.destination-list:hover:after {
+  -webkit-box-shadow: inset 0px 0px 91px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 91px 0px rgba(0, 0, 0, 0.75);
+  -ms-box-shadow: inset 0px 0px 91px 0px rgba(0, 0, 0, 0.75);
+  -o-box-shadow: inset 0px 0px 91px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 91px 0px rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.destination-list a{
+	min-height: 220px;
+    padding: 2em;
+    position: relative;
+    width: 100%;
+    display: block;
+    z-index: 12;
+}
+
+/*-- destination list hover --*/
+.destination-list a:hover::after{
+	opacity: 1;
+}
+
+.destination-list a:hover h2{	
+	top: -3px;
+}
+
+.destination-list a:after{
+	position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    content: "";
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    opacity: 0;
+	
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.case-studies-summary h2{
+	position: relative;
+	line-height: 220px;
+	color: #fff;
+    margin-bottom: 0;
+	top: 0;
+    font-size: 24px;
+    font-weight: 400;
+	
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;	
+}
+
+/*-- destination grid --*/
+.dest-grid{
+	min-height: 220px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#delcd-destination {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/*-- destination grid title --*/
+.title-bg {
+  text-align: center;
+  padding: 2em;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #ff9f43;
+  z-index: 12;
+}
+
+.title-bg-txt{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.title-bg h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 40px;
+  
+}
+
+.title-bg span {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.title-bg a {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  border: 1px solid #fff;
+  padding: 5px 7px;
+  
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* =======================================================
+* 	Tour Detail
+* ======================================================= */
+
+/*-- tour price --*/
+.tour-price h3{
+	margin-bottom: 0;
+	margin-top: 15px;
+}
+
+.tour-price h2{
+	color: #000; 
+	font-size: 3em; 
+	padding: 1em; 
+	margin: 0;
+}
+
+.tour-price .one-1,
+.car-price .one-1
+{
+	border: 2px solid #F78536;
+}
+
+/*-- tour cart --*/
+#tour-cart-btn{
+	text-align: right;
+}
+
+#tour-cart-btn a{
+	background-color: #F78536;
+	color: #fff;
+}
+
+#tour-cart-btn a:hover{
+	background-color: transparent; 
+	color: #F78536;   
+}
+
+/*-- slider button image --*/
+.slider-button ul{
+	margin-top: 10px;
+}
+
+.slider-button img{
+	width: 70px; 
+	height: 70px;
+}
+
+.tour-tabs .nav-item{
+	border-bottom: 2px solid #F78536;
+	margin-right: 8px;
+}
+
+/*-- tour review --*/
+#reviews i{ color: #F78536; }
+
+#reviews span{ font-weight: bold; }
+
+#reviews p{
+	max-width: 60%;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #dedede;
+}
+
+/* =======================================================
+* 	Car Rent
+* ======================================================= */
+
+/*-- car box display --*/
+.car {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  float: left;
+  margin-bottom: 30px;
+}
+
+.car .one-4 {
+  width: 40%;
+  float: left;
+  background: #F78536;
+  padding: 30px;
+}
+
+.one-4 h3{ color: #fff; }
+
+.car .one-1 {
+  width: 60%;
+  float: right;
+  height: auto;
+}
+	
+/*-- car price --*/
+.car-price-list{
+	background: #F78536;
+    padding: 30px 20px;
+}
+
+.car-price-list h3, 
+.car-price-list span{
+	color: #fff;
+}
+
+.car-price-list span{
+	display: block;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.car-img{
+	height: auto;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#car-list .rent-btn{
+	margin-top: 15px;
+	border: 2px solid #fff;
+}
+
+#car-list .rent-btn:hover{
+	color: #5a5a5a;
+	background-color: #fff;
+}
+
+.car-price h3{
+	margin-bottom: 0;
+}
+
+.car-price ul{
+	margin-bottom: 0;
+	padding: 20px 0 20px 15px;
+}
+
+.car-price li{
+	font-weight: 500;
+	font-size: 18px;
+}
+
+/* =======================================================
+* 	Blog
+* ======================================================= */
+
+/*-- blog container --*/
+#blog-full .container{
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+
+/*-- blog left side --*/
+#blog-left-side .bottom-border,
+#comment-container
+{
+	margin-bottom: 20px;
+}
+
+.bottom-border{
+	border-bottom: 1px solid #eeeeee;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+.about.bottom-border{ padding-bottom: 15px; }
+
+/*-- blog image --*/
+.img-full{
+	width: 100%;
+	height: auto;
+}
+
+/*-- blog heading --*/
+.blog-heading,
+.blog-subheading
+{
+	color: #686868;
+	text-align: left;
+	padding-top: 20px;
+	margin-bottom: 15px;
+}
+
+.blog-heading{
+	font-size: 1.8em;
+}
+
+/*-- blog post-date --*/
+.posting-date,
+.comment-date,
+.reply-date
+{
+	display: block;
+	font-family: "Work Sans", Arial, sans-serif;
+    font-size: 13px;
+	color: #bdbdbd;
+	padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.quote .blog-text{
+	color: #a8a8a8;
+	padding: 0 25px;
+	border-left: 2px solid #F78536;
+}
+
+/*-- blog post author --*/
+#author-detail h4,
+.comment-detail h4,
+.reply-detail h4
+{
+	color: rgba(0, 0, 0, .7);
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+#author-detail p,
+.comment-text,
+.reply-text
+{
+	color: #828282;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/*-- blog comment --*/
+#comment-count,
+#post-comment
+{
+	color: rgba(0, 0, 0, .7);
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+.comment{
+	padding-top: 20px;
+}
+
+.comment-detail,
+.reply-detail
+{
+	position: relative;
+}
+
+.comment-text,
+.reply-text
+{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #eeeeee;
+}
+
+.reply{
+	padding: 20px 0px 20px 30px;
+}
+
+.reply-button{
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 20px;
+	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.176);	
+}
+
+.reply-button:hover{
+	text-decoration: none;
+}
+
+.reply-button i{
+	padding: 5px;
+	color: #828282;
+	font-size: 1.2em;
+}
+
+.reply-button:hover i{
+	color: #F78536;
+}
+
+/*-- blog comment form --*/
+#comment-form{
+	padding-top: 10px;
+}
+
+#comment-form #name-input,
+#comment-form #text-input,
+#comment-form #btn-submit-container
+{
+	padding-left: 0px;
+}
+
+#comment-form #email-input,
+#comment-form #text-input,
+#comment-form #btn-submit-container
+{
+	padding-right: 0px;
+}
+
+/*-- next-prev button --*/
+#next-prev{
+	margin-bottom: 70px;
+}
+
+#prevnext-container{
+	position: relative; 
+	padding: 2em 0;
+}
+
+.older,
+.newer
+{
+	position: absolute;
+	color: #888;	
+}
+
+.older:hover,
+.newer:hover
+{
+	color: #F78536;
+	text-decoration: none;
+}
+
+.older{
+	left: 0;
+}
+
+.newer{
+	right: 0;
+}
+
+.newer p,
+.newer span
+{
+	float: left;
+	margin: -2px 8px 0 8px;
+}
+
+.older p,
+.older span
+{
+	float: right;
+	margin: -2px 8px 0 8px;
+}
+
+.icon-arrow-left,
+.icon-arrow-right{
+	font-size: 28px;
+}
+
+/*-- blog right widget --*/
+#right-sidebar{
+	min-height: 400px;
+	width: 33.3%;
+	padding-left: 25px;
+	float: left;
+}
+
+#right-sidebar .about{
+	padding-bottom: 10px;
+}
+
+.about h4,
+.search h4,
+.latest-post,
+.tags-container h4
+{
+	color: rgba(0, 0, 0, .7);
+	padding-bottom: 5px;
+	margin-bottom: 12px;
+}
+
+.about .text{
+	margin-bottom: 5px;
+}
+
+#sidebar-social{ 
+	margin-bottom: 0; 
+	padding-left: 0;
+}
+
+#sidebar-social li{
+	display: inline-block;
+	padding: 20px 10px 10px 0px;
+}
+
+#sidebar-social i{
+	font-size: 32px;
+	
+	-webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s; 
+	transition: all 0.35s;
+}
+
+#sidebar-social a:hover{
+	text-decoration: none;
+	color: #dedede;
+}
+
+#sidebar-search{
+	border: 1px solid #dbdbdb;
+	width: 100%;
+	height: 30px;
+}
+
+#btn-search{
+	font-size: 1em;
+	font-weight: 500;
+	color: rgba(0, 0, 0, .7);
+	cursor: pointer;
+	border: 1px solid #ededed;
+	background-color: #ededed;
+	width: 100%;
+	padding: 6px 0 6px 0;
+	margin-top: 10px;
+	
+	-webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s; 
+	transition: all 0.35s;
+}
+
+#btn-search:hover{
+	background-color: #e0e0e0;
+	color: #000000;	
+}
+
+.search,
+.latest-post,
+.tags-container
+{
+	padding-top: 15px;
+}
+
+/*-- blog post widget list --*/
+.title-container{
+	padding-left: 5px;
+}
+
+#sidebar-post .title{
+	font-size: 16.5px;
+	font-weight: 500;
+	color: rgba(0, 0, 0, .7);
+	margin-bottom: 0;
+}
+
+#sidebar-post .post-date{
+	padding-top: 5px;
+}
+
+#sidebar-post a:hover{
+	text-decoration: none;
+}
+
+/*-- widget tags --*/
+#tags{ padding-left: 0; }
+
+#tags li,
+#tags a
+{
+	display: inline-block;
+}
+
+#tags a{
+	color: rgba(0, 0, 0, .7);
+	padding: 12px;
+	margin-top: 5px;
+	margin-right: 2px;
+	background-color: #F78536;
+	color: #fff;
+	
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s; 
+	transition: all 0.35s;
+}
+
+#tags a:hover{
+	background-color: #f1f1f1;
+	color: #000;
+	text-decoration: none;
+}
+
+.delcd-blog {
+  margin-bottom: 60px;
+}
+
+/*-- blog text --*/
+.delcd-blog .blog-text {
+  margin-bottom: 30px;
+  position: relative;
+  background: #fff;
+  width: 100%;
+  padding: 30px;
+  float: right;
+  -webkit-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
+}
+
+.blog-text span {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+span.posted_by {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+}
+
+span.comment {
+  float: right;
+}
+
+span.comment a {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+span.comment i {
+  color: #F78536;
+  padding-left: 7px;
+}
+
+.blog-text h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.prod-title h3 a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#delcd-work-section,
+#delcd-car,
+#delcd-blog-section,
+#delcd-features,
+#delcd-tours,
+#delcd-testimonial,
+.delcd-content-section {
+  padding: 7em 0;
+}
+
+.delcd-section-gray {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* =======================================================
+* 	Recent Blog
+* ======================================================= */
+
+/*-- blog first col --*/
+.feature-full-1col .btn:hover, 
+.feature-full-1col .btn:focus, 
+.feature-full-1col .btn:active {
+  background: #F78536;
+  color: #fff;
+}
+
+.feature-full-1col h3,
+.feature-full-2col h3{
+	color: rgba(255, 137, 55, .78);
+}
+
+.feature-full-1col {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.feature-full-1col .image, 
+.feature-full-1col .desc {
+  float: left;
+  width: 50%;
+}
+
+.feature-full-1col .image {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+}
+
+.feature-full-1col .desc {
+  padding: 50px;
+  background: #fff;
+}
+
+/*-- blog second col --*/
+.feature-full-2col {
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.feature-full-2col .f-hotel {
+  float: left;
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.f-hotel .image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.f-hotel .image, 
+.f-hotel .desc {
+  width: 50%;
+}
+
+.f-hotel .desc {
+  padding: 30px;
+  background: #fff;
+}
+
+/* =======================================================
+* 	Flight
+* ======================================================= */
+
+/*-- flight book --*/
+.flight-book {
+  width: 100%;
+  float: left;
+  margin-bottom: 1px;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+/*-- plane name --*/
+.flight-book .plane-name {
+  width: 40%;
+  float: left;
+  padding: 6px 20px;
+  background: #F78536;
+}
+
+.flight-book .p-flight {
+  font-size: 18px;
+  color: #fff;
+}
+
+/*-- flight description --*/
+.flight-book .desc {
+  width: 60%;
+  float: right;
+  background: #00AD7C;
+  padding: 6px 20px;
+}
+
+.flight-book .left {
+  float: left;
+}
+
+.flight-book h4, 
+.flight-book span {
+  color: #fff;
+}
+
+.flight-book h4 {
+  margin-bottom: 0;
+}
+
+.flight-book .right {
+  float: right;
+  font-size: 25px;
+}
+
+.flight-book i {
+  font-weight: 300;
+}
+
+.flight-book .price {
+  font-weight: 400;
+}
+
+/* =======================================================
+* 	Testimonial
+* ======================================================= */
+
+/*-- testimonial --*/
+#delcd-testimonial {
+  position: relative;
+  bottom: -1px;
+  background: #00AD7C;
+  background-size: cover;
+  background-position: top center;
+}
+
+#delcd-testimonial h2 {
+  color: white;
+}
+
+/*-- testimonial box --*/
+#delcd-testimonial .box-testimony {
+  margin-bottom: 2em;
+  float: left;
+}
+
+/*-- testimonial blockquote --*/
+#delcd-testimonial blockquote {
+  padding-left: 0;
+  border-left: none;
+  padding: 40px;
+  background: #fff;
+  position: relative;
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#delcd-testimonial blockquote:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 40px;
+  border-top: 15px solid black;
+  border-top-color: #fff;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+#delcd-testimonial .quote {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 0;
+  display: table;
+  color: #fff;
+  width: 56px;
+  height: 56px;
+  margin-top: -30px;
+  background: #00AD7C;
+  
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#delcd-testimonial span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#delcd-testimonial p {
+  letter-spacing: 1px;
+}
+
+#delcd-testimonial .author {
+  line-height: 20px;
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+#delcd-testimonial .subtext {
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+}
+
+.delcd-testimonial{
+  position: relative;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+/* =======================================================
+* 	Contact
+* ======================================================= */
+
+/*-- contact info --*/
+#delcd-contact .contact-info {
+  margin: 0;
+  padding: 0;
+}
+
+#delcd-contact li {
+  list-style: none;
+  margin: 0 0 20px 0;
+  position: relative;
+  padding-left: 40px;
+}
+
+#delcd-contact i {
+  position: absolute;
+  top: .3em;
+  left: 0;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/*-- contact link --*/
+.contact-info a {
+  font-weight: 400;
+}
+
+/*-- contact form --*/
+#delcd-contact .form-control {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+
+  box-shadow: none;
+  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 400;
+
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+}
+
+#delcd-contact .form-control:focus, 
+#delcd-contact .form-control:active 
+{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#delcd-contact input[type="text"] {
+  height: 50px;
+}
+
+#delcd-contact .form-group {
+  margin-bottom: 30px;
+}
+
+#delcd-services,
+#delcd-about,
+#delcd-contact {
+  padding: 7em 0;
+}
+
+/* =======================================================
+* 	Footer
+* ======================================================= */
+
+/*-- footer --*/
+#footer {
+  background: #393e46;
+  padding: 60px 0 40px;
+}
+
+/*-- footer title --*/
+#footer-title h3{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+/*-- footer description --*/
+#footer p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*-- footer link --*/
+#footer a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#footer p a:hover, 
+#footer p a:active, 
+#footer p a:focus {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#footer .delcd-footer-link {
+  padding-bottom: 30px;
+}
+
+.delcd-footer-link h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.delcd-footer-link li, 
+.delcd-footer-link ul {
+  padding: 0;
+  margin: 0;
+}
+
+.delcd-footer-link li {
+  list-style: none;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+#footer a:hover, 
+#footer a:active, 
+#footer a:focus {
+  color: #fff;
+}
+
+/*-- footer social icons --*/
+.delcd-social-icons > a {
+  padding: 4px 10px;
+  color: #F78536;
+}
+
+.delcd-social-icons i {
+  font-size: 26px;
+}
+
+/* =======================================================
+* 	Bootstrap Overwrite
+* ======================================================= */
+
+/*-- button --*/
+.btn {
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/*-- primary button --*/
+.btn.btn-primary {
+  background: #F78536;
+  color: #fff;
+  border: none;
+  border: 2px solid transparent;
+}
+
+.btn.btn-primary:hover, 
+.btn.btn-primary:active, 
+.btn.btn-primary:focus 
+{
+  box-shadow: none;
+  background: #393e46;
+  color: #fff;
+}
+
+.btn:hover, 
+.btn:active, 
+.btn:focus 
+{
+  background: #393e46;
+  color: #fff;
+  outline: none;
+}
+
+/*-- default button --*/
+.btn.btn-default:hover, 
+.btn.btn-default:focus, 
+.btn.btn-default:active 
+{
+  border-color: transparent;
+}
+
+/*-- outline button --*/
+.btn.btn-outline {
+  background: transparent;
+  color: #F78536;
+  border: 2px solid #F78536;
+}
+
+.btn.btn-outline:hover, 
+.btn.btn-outline:focus, 
+.btn.btn-outline:active {
+  background: #F78536;
+  color: #fff;
+  border: 2px solid #F78536;
+}
+
+/*-- tab panel button --*/
+.tab-content .btn {
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.js .animate-box {
+  opacity: 0;
+}
+
+/* =======================================================
+* 	Div Padding
+* ======================================================= */
+
+/*-- row padding --*/
+.row-bottom-padded-lg,
+.row-top-padded-lg
+{
+  padding-bottom: 7em;
+}
+
+.row-bottom-padded-md,
+.row-top-padded-md
+{
+  padding-bottom: 4em;
+}
+
+/*-- bottom line --*/
+.border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.lead {
+  line-height: 1.8;
+}

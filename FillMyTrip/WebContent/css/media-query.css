@@ -1,0 +1,430 @@
+/* --------------
+
+Template name: Go Travel
+Author: del-code
+Version: 1.0
+
+-------------- */
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. larger than 2560px
+2. smaller or 1024px
+	2.1 text masking / .blend-container h2
+	2.2 car rent / #car-list .rent-btn
+	2.3 price list / .car-price-list
+3. smaller or 1024px
+	3.1 text masking / .blend-container h2
+	3.2 car rent / #car-list .rent-btn
+	3.3 price list / .car-price-list	
+4. smaller or 992px
+	4.1 travel plans / #delcd-features .icon
+	4.2 recent blog / .feature-full-2col .f-hotel
+5. smaller or 812px	
+	5.1 text masking / .blend-container
+	5.2 menu container / #delcd-menu-wrap
+	5.3 tour detail / .tour-price h3		
+	5.4 car rent / #car-list .rent-btn		
+	5.5 blog detail / .older		
+	5.6 contact / #delcd-contact .contact-info		
+6. smaller or 768px
+	6.1 tabpanel / #form-tab-panel a
+	6.2 travel plans / #delcd-features .icon
+	6.3 div padding / .row-bottom-padded-lg
+	6.4 header / .delcd-cover.delcd-cover_2
+	6.5 popular destination / .title-bg h2
+	6.6 testimonial / .delcd-testimonial	
+7. smaller or 738px
+	7.1 tour detail / .tour-price h3
+	7.2 blog detail / #author-detail
+	7.3 footer / footer .row-bottom-padded-md	
+8. smaller or 568px	
+	8.1 header cover / .delcd-cover
+	8.2 recent blog / .feature-full-2col .image
+	8.3 car / .car-img
+	8.4 blog detail / .title-container
+9. smaller or 480px
+	9.1 tabpanel / .tabulation input[type"text"]
+	9.2 travel plan / #delcd-features .feature-copy
+	9.3 Recent blog / .feature-full-2col .image	
+10. smaller or 320px	
+	10.1 text masking / .blend-container h2
+	10.2 tour detail / .tour-price .one-4
+	
+------------------------------------------------------------------*/
+
+/* larger than 2560px */
+@media (min-width: 2560px) {
+	
+	body {
+		zoom: 200%;
+	}
+
+}
+
+@media screen and (max-width: 1024px) {
+	
+	/*-- text masking --*/
+	.blend-container h2{ 
+		font-size: 9.5em; 
+	}
+	
+	/*-- car rent --*/
+	#car-list .rent-btn{
+		font-size: 14px;
+	}
+	
+	/*-- price list --*/
+	.car-price-list{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+}
+
+@media screen and (max-width: 992px) {
+	
+	/*-- travel plans --*/
+	#delcd-features .icon {
+		width: 10%;
+	}
+  
+	/*-- recent blog --*/
+	.feature-full-2col .f-hotel {
+		width: 100%;
+		flex-wrap: wrap;
+		margin-bottom: 30px;
+	}
+	
+	.feature-left .icon {
+		width: 10%;
+	}
+	
+	.feature-left .feature-copy {
+		width: 90%;
+	}
+  
+	#delcd-features .feature-left {
+		margin-bottom: 30px;
+	}
+	
+}
+
+@media screen and (max-width: 812px) {
+		
+	/*-- text masking --*/	
+	.blend-container{
+		margin-bottom: 35px;
+	}	
+
+	/*-- menu container --*/
+	#delcd-menu-wrap {
+		display: none;
+	}
+
+	.delcd-nav-toggle {
+		display: block;
+		top: 0px;
+		margin-top: 2em;
+	}
+
+	#offcanvas-menu {
+		display: block;
+	}
+  
+	/*-- tour detail --*/
+	.tour-price h3{ margin-top: 32px; }
+	.car-price h3{ margin-top: 20px; }
+	
+	
+	#tour-cart-btn{
+		text-align: left;
+		margin-bottom: 15px;
+	}
+
+	#tour-cart-btn a{
+		width: 100%;
+	}
+
+	.slider-button li{
+		margin-top: 8px;
+	}
+
+	#reviews p{
+		max-width: 100%;
+	}
+	
+	/*-- car rent --*/
+	#car-list .rent-btn{
+		font-size: 16px;
+	}
+	
+	.car-price-list{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	
+	/*-- blog detail --*/
+	.older, 
+	.newer{ 
+		top: 0.8em;
+	}
+	
+	/*-- contact --*/
+	#delcd-contact .contact-info{
+		padding-bottom: 25px;
+	}
+  
+}
+
+/*-- tablet --*/
+@media screen and (max-width: 768px) {
+	
+	/*-- tabpanel --*/
+	#form-tab-panel a {
+		padding: 15px 10px;
+	}
+	
+	#delcd-work-section,
+	#delcd-car,
+	#delcd-blog-section,
+	#delcd-features,
+	#delcd-tours,
+	#delcd-testimonial,
+	.delcd-content-section {
+		padding: 4em 0;
+	}
+	
+	.delcd-tours > div:hover:after {
+		opacity: 0;
+		visibility: hidden;
+	}
+	
+	.delcd-tours > div:hover img {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+	
+	/*-- travel plans --*/
+	#delcd-features .icon {
+		width: 15%;
+	}
+	
+	#delcd-features .feature-copy {
+		width: 85%;
+	}
+	
+	.feature-full-1col .image, 
+	.feature-full-1col .desc {
+		flex-wrap: wrap;
+		position: relative;
+		width: 100%;
+	}
+	
+	.feature-full-1col .image {
+		height: 300px;
+	}
+  
+	.feature-full-1col .desc {
+		padding: 30px;
+	}
+	
+	.feature-full-2col {
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	
+	.feature-left .icon {
+		width: 15%;
+	}
+	
+	.feature-left .feature-copy {
+		width: 85%;
+	}
+  
+	#delcd-services,
+	#delcd-about,
+	#delcd-contact {
+		padding: 4em 0;
+	}
+	
+	.delcd-blog {
+		width: 100%;
+	}
+	
+	/*-- div padding --*/
+	.row-bottom-padded-lg,
+	.row-top-padded-lg
+	{
+		padding-bottom: 2em;
+	}
+	
+	.row-bottom-padded-md,
+	.row-top-padded-md
+	{
+		padding-bottom: 2em;
+	}
+	
+	/*-- header --*/
+	.delcd-cover.delcd-cover_2 {
+		height: inherit;
+		padding: 3em 0;
+	}
+	
+	.delcd-cover .desc {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+	.desc h2,
+	.desc2 h2{
+		font-size: 40px;
+	}
+	
+	/*-- popular destination --*/
+	.title-bg h2 {
+		font-size: 24px;
+	}
+	
+	/*-- testimonial --*/
+	.delcd-testimonial, 
+	.delcd-team 
+	{
+		border-right: 0;
+		margin-bottom: 80px;
+	}
+  
+}
+
+@media screen and (max-width: 738px) {
+	
+	#desc-container .desc-txt{
+		display: none;
+	}
+	
+	/*-- tour detail --*/
+	.tour-price h3{ margin-top: 15px; }
+	.car-price h3{ margin-top: 0; }
+	
+	/*-- blog detail --*/
+	#author-detail{
+		padding-top: 15px;
+	}
+	
+	/*-- footer --*/
+	footer .row-bottom-padded-md{
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 568px) {
+	
+	/*-- header cover --*/
+	.delcd-cover, 
+	.delcd-hero{
+		min-height: 1100px;
+	}
+	
+	.blend-container h2{
+		font-size: 7em;
+	}
+	
+	/*-- recent blog --*/
+	.feature-full-2col .image, 
+	.feature-full-2col .desc 
+	{
+		width: 100%;
+	}
+	
+	.feature-full-2col .image{
+		position: relative;
+		height: 300px;
+	}
+	
+	/*-- car --*/
+	.car-img{
+		height: 320px;
+	}
+	
+	.car-price-list{
+		text-align: center;
+	}
+	
+	/*-- blog detail --*/
+	.title-container{ 
+		padding-left: 15px; 
+		padding-top: 15px; 
+	}
+	
+	.bottom-border{
+		padding-bottom: 0;
+	}
+	
+}
+
+@media screen and (max-width: 480px) {
+	
+	/*-- tabpanel --*/
+	.tabulation input[type="text"] {
+		width: 55%;
+		float: right;
+	}
+	
+	.tabulation .cs-select {
+		width: 55%;
+		float: right;
+	}
+	
+	.tabulation label {
+		width: 40%;
+	}
+	
+	.delcd-cover, 
+	.delcd-hero{
+		min-height: 900px;
+	}
+	
+	.tour-price h2{
+		padding-left: 25px;
+		
+	}
+	
+	
+	/*-- travel plan --*/
+	#delcd-features .feature-copy {
+		width: 80%;
+	}
+	
+	/*-- Recent blog --*/
+	.feature-full-2col .image {
+		height: 200px;
+	}
+	
+	.feature-left .feature-copy {
+		width: 80%;
+	}
+	
+}
+
+@media screen and (max-width: 320px) {
+	
+	/*-- text masking --*/
+	.blend-container h2{
+		font-size: 6em;
+	}
+	
+	/*-- tour detail --*/
+	.tour-price .one-4,
+	.tour-price h2,
+	.car-price .one-4,
+	.car-price h2
+	{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	
+}
